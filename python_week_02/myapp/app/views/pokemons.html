@@ -1,0 +1,24 @@
+<form action = "/pokemon" method="post">
+    {% for type in form.types %}
+    <label>{{type.name}}</label>
+    <input type="checkbox" name="{{form.title}}" value="{{type.id}}">
+    {% endfor %}
+    <input type="submit" value="Submit">
+</form>
+<div>
+    <table>
+        {% for pokemon in pokemons %}
+        <tr>
+            <td>
+            {{ pokemon.id }}
+            </td>
+            <td>
+                <a href="/pokemon/{{pokemon.name}}">{{ pokemon.name }}</a>
+            </td>
+            <td>
+            {{ pokemon.type }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
